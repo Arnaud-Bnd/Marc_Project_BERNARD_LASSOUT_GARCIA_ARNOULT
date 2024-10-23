@@ -15,4 +15,5 @@ add_executable(Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT main.c
         stack.c
         stack.h
         tree_functions.h
+        tree_functions.c
 )

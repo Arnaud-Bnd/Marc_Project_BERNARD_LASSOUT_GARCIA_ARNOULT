@@ -6,7 +6,7 @@
 #define MARC_PROJECT_BERNARD_LASSOUT_GARCIA_ARNOULT_TREE_FUNCTIONS_H
 
 typedef struct s_node{
-    int val;//valeur stockée dans le noeud
+    int value;//valeur stockée dans le noeud
     struct s_node **sons;
     int nbSons; // nombre de fils fils
 }t_node;
