@@ -13,10 +13,12 @@ typedef struct s_node{
 
 typedef struct s_n_node{
     int value;
-    t_node sons;
+    int depth;
+    t_node **sons;
 }t_n_node;
 
-t_node *createNode(int val, int nbSons);
+t_n_node *createTree(int);
+t_node *createNode(int, int);
 
 
 #endif //MARC_PROJECT_BERNARD_LASSOUT_GARCIA_ARNOULT_TREE_FUNCTIONS_H

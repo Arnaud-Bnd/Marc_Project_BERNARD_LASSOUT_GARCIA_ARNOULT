@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "map.h"
+#include "tree_functions.h"
 
 int main() {
     t_map map = createMapFromFile("../maps/example1.map");
@@ -22,5 +23,11 @@ int main() {
         printf("\n");
     }
     displayMap(map);
+
+    t_n_node *new_tree = createTree(3);
+    printf("\t\t\t%d\n", new_tree->value);
+    for (int i = 0; i < 5; i++) {
+        printf("%d\t", new_tree->sons[i]->value);
+    }
     return 0;
 }
