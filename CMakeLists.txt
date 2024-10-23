@@ -14,5 +14,4 @@ add_executable(untitled1 main.c
         queue.h
         stack.c
         stack.h
-        proba.h
-        proba.c)
+)
