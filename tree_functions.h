@@ -7,10 +7,15 @@
 
 typedef struct s_node{
     int value;//valeur stockée dans le noeud
-    int depth; // profondeur de l'arbre
     struct s_node **sons;
     int nbSons; // nombre de fils fils
 }t_node;
+
+typedef struct s_n_node{
+    int value;
+    int depth; // profondeur de l'arbre
+    t_node *sons;
+}t_n_node;
 
 t_node *createNode(int val, int nbSons);
 
