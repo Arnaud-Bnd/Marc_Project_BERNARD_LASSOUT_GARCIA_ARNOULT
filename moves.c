@@ -40,6 +40,7 @@ t_orientation rotate(t_orientation ori, t_move move)
             rst=2;
             break;
         default:
+            rst=0;
             break;
     }
     return (ori+rst)%4;
@@ -73,6 +74,8 @@ t_localisation translate(t_localisation loc, t_move move)
                     res.y = loc.pos.y - 1;
                     break;
                 default:
+                    res.x = loc.pos.x;
+                    res.y = loc.pos.y;
                     break;
             }
             break;
@@ -95,6 +98,8 @@ t_localisation translate(t_localisation loc, t_move move)
                     res.y = loc.pos.y - 2;
                     break;
                 default:
+                    res.x = loc.pos.x;
+                    res.y = loc.pos.y;
                     break;
             }
             break;
@@ -117,6 +122,8 @@ t_localisation translate(t_localisation loc, t_move move)
                     res.y = loc.pos.y - 3;
                     break;
                 default:
+                    res.x = loc.pos.x;
+                    res.y = loc.pos.y;
                     break;
             }
             break;
@@ -139,10 +146,14 @@ t_localisation translate(t_localisation loc, t_move move)
                     res.y = loc.pos.y + 1;
                     break;
                 default:
+                    res.x = loc.pos.x;
+                    res.y = loc.pos.y;
                     break;
             }
             break;
         default:
+            res.x = loc.pos.x;
+            res.y = loc.pos.y;
             break;
     }
         return loc_init(res.x, res.y, loc.ori);
@@ -158,9 +169,11 @@ char *getMoveAsString(t_move move)
 
 t_localisation move(t_localisation loc, t_move move)
 {
-    t_localisation new_loc;
-    new_loc.ori = rotate(loc.ori, move);
-    new_loc = translate(loc, move);
+    t_localisation new_loc = loc_init(loc.pos.x, loc.pos.y, rotate(loc.ori, move));
+    //new_loc.ori = rotate(loc.ori, move);
+    //new_loc.pos.x = loc.pos.x;
+    //new_loc.pos.y = loc.pos.y;
+    new_loc = translate(new_loc, move);
     return new_loc;
 }
 
