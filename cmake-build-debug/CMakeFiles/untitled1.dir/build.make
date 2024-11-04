@@ -53,10 +53,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT"
+CMAKE_SOURCE_DIR = /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/untitled1.dir/depend.make
@@ -70,88 +70,88 @@ include CMakeFiles/untitled1.dir/progress.make
 include CMakeFiles/untitled1.dir/flags.make
 
 CMakeFiles/untitled1.dir/main.c.o: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/main.c.o: /Users/arnaudbernard/Documents/01\ -\ Efrei/Année\ 2/S1/Algorithmique\ et\ structure\ de\ données\ 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/main.c
+CMakeFiles/untitled1.dir/main.c.o: /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/main.c
 CMakeFiles/untitled1.dir/main.c.o: CMakeFiles/untitled1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled1.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/main.c.o -MF CMakeFiles/untitled1.dir/main.c.o.d -o CMakeFiles/untitled1.dir/main.c.o -c "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled1.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/main.c.o -MF CMakeFiles/untitled1.dir/main.c.o.d -o CMakeFiles/untitled1.dir/main.c.o -c /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/main.c
 
 CMakeFiles/untitled1.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/untitled1.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/main.c" > CMakeFiles/untitled1.dir/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/main.c > CMakeFiles/untitled1.dir/main.c.i
 
 CMakeFiles/untitled1.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/untitled1.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/main.c" -o CMakeFiles/untitled1.dir/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/main.c -o CMakeFiles/untitled1.dir/main.c.s
 
 CMakeFiles/untitled1.dir/loc.c.o: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/loc.c.o: /Users/arnaudbernard/Documents/01\ -\ Efrei/Année\ 2/S1/Algorithmique\ et\ structure\ de\ données\ 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/loc.c
+CMakeFiles/untitled1.dir/loc.c.o: /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/loc.c
 CMakeFiles/untitled1.dir/loc.c.o: CMakeFiles/untitled1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled1.dir/loc.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/loc.c.o -MF CMakeFiles/untitled1.dir/loc.c.o.d -o CMakeFiles/untitled1.dir/loc.c.o -c "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/loc.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled1.dir/loc.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/loc.c.o -MF CMakeFiles/untitled1.dir/loc.c.o.d -o CMakeFiles/untitled1.dir/loc.c.o -c /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/loc.c
 
 CMakeFiles/untitled1.dir/loc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/untitled1.dir/loc.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/loc.c" > CMakeFiles/untitled1.dir/loc.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/loc.c > CMakeFiles/untitled1.dir/loc.c.i
 
 CMakeFiles/untitled1.dir/loc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/untitled1.dir/loc.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/loc.c" -o CMakeFiles/untitled1.dir/loc.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/loc.c -o CMakeFiles/untitled1.dir/loc.c.s
 
 CMakeFiles/untitled1.dir/moves.c.o: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/moves.c.o: /Users/arnaudbernard/Documents/01\ -\ Efrei/Année\ 2/S1/Algorithmique\ et\ structure\ de\ données\ 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/moves.c
+CMakeFiles/untitled1.dir/moves.c.o: /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/moves.c
 CMakeFiles/untitled1.dir/moves.c.o: CMakeFiles/untitled1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled1.dir/moves.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/moves.c.o -MF CMakeFiles/untitled1.dir/moves.c.o.d -o CMakeFiles/untitled1.dir/moves.c.o -c "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/moves.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled1.dir/moves.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/moves.c.o -MF CMakeFiles/untitled1.dir/moves.c.o.d -o CMakeFiles/untitled1.dir/moves.c.o -c /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/moves.c
 
 CMakeFiles/untitled1.dir/moves.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/untitled1.dir/moves.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/moves.c" > CMakeFiles/untitled1.dir/moves.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/moves.c > CMakeFiles/untitled1.dir/moves.c.i
 
 CMakeFiles/untitled1.dir/moves.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/untitled1.dir/moves.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/moves.c" -o CMakeFiles/untitled1.dir/moves.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/moves.c -o CMakeFiles/untitled1.dir/moves.c.s
 
 CMakeFiles/untitled1.dir/map.c.o: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/map.c.o: /Users/arnaudbernard/Documents/01\ -\ Efrei/Année\ 2/S1/Algorithmique\ et\ structure\ de\ données\ 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/map.c
+CMakeFiles/untitled1.dir/map.c.o: /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/map.c
 CMakeFiles/untitled1.dir/map.c.o: CMakeFiles/untitled1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled1.dir/map.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/map.c.o -MF CMakeFiles/untitled1.dir/map.c.o.d -o CMakeFiles/untitled1.dir/map.c.o -c "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/map.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled1.dir/map.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/map.c.o -MF CMakeFiles/untitled1.dir/map.c.o.d -o CMakeFiles/untitled1.dir/map.c.o -c /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/map.c
 
 CMakeFiles/untitled1.dir/map.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/untitled1.dir/map.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/map.c" > CMakeFiles/untitled1.dir/map.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/map.c > CMakeFiles/untitled1.dir/map.c.i
 
 CMakeFiles/untitled1.dir/map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/untitled1.dir/map.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/map.c" -o CMakeFiles/untitled1.dir/map.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/map.c -o CMakeFiles/untitled1.dir/map.c.s
 
 CMakeFiles/untitled1.dir/queue.c.o: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/queue.c.o: /Users/arnaudbernard/Documents/01\ -\ Efrei/Année\ 2/S1/Algorithmique\ et\ structure\ de\ données\ 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/queue.c
+CMakeFiles/untitled1.dir/queue.c.o: /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/queue.c
 CMakeFiles/untitled1.dir/queue.c.o: CMakeFiles/untitled1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/untitled1.dir/queue.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/queue.c.o -MF CMakeFiles/untitled1.dir/queue.c.o.d -o CMakeFiles/untitled1.dir/queue.c.o -c "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/queue.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/untitled1.dir/queue.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/queue.c.o -MF CMakeFiles/untitled1.dir/queue.c.o.d -o CMakeFiles/untitled1.dir/queue.c.o -c /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/queue.c
 
 CMakeFiles/untitled1.dir/queue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/untitled1.dir/queue.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/queue.c" > CMakeFiles/untitled1.dir/queue.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/queue.c > CMakeFiles/untitled1.dir/queue.c.i
 
 CMakeFiles/untitled1.dir/queue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/untitled1.dir/queue.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/queue.c" -o CMakeFiles/untitled1.dir/queue.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/queue.c -o CMakeFiles/untitled1.dir/queue.c.s
 
 CMakeFiles/untitled1.dir/stack.c.o: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/stack.c.o: /Users/arnaudbernard/Documents/01\ -\ Efrei/Année\ 2/S1/Algorithmique\ et\ structure\ de\ données\ 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/stack.c
+CMakeFiles/untitled1.dir/stack.c.o: /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/stack.c
 CMakeFiles/untitled1.dir/stack.c.o: CMakeFiles/untitled1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/untitled1.dir/stack.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/stack.c.o -MF CMakeFiles/untitled1.dir/stack.c.o.d -o CMakeFiles/untitled1.dir/stack.c.o -c "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/stack.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/untitled1.dir/stack.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/untitled1.dir/stack.c.o -MF CMakeFiles/untitled1.dir/stack.c.o.d -o CMakeFiles/untitled1.dir/stack.c.o -c /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/stack.c
 
 CMakeFiles/untitled1.dir/stack.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/untitled1.dir/stack.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/stack.c" > CMakeFiles/untitled1.dir/stack.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/stack.c > CMakeFiles/untitled1.dir/stack.c.i
 
 CMakeFiles/untitled1.dir/stack.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/untitled1.dir/stack.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/stack.c" -o CMakeFiles/untitled1.dir/stack.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/stack.c -o CMakeFiles/untitled1.dir/stack.c.s
 
 # Object files for target untitled1
 untitled1_OBJECTS = \
@@ -173,7 +173,7 @@ untitled1: CMakeFiles/untitled1.dir/queue.c.o
 untitled1: CMakeFiles/untitled1.dir/stack.c.o
 untitled1: CMakeFiles/untitled1.dir/build.make
 untitled1: CMakeFiles/untitled1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable untitled1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable untitled1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -185,6 +185,6 @@ CMakeFiles/untitled1.dir/clean:
 .PHONY : CMakeFiles/untitled1.dir/clean
 
 CMakeFiles/untitled1.dir/depend:
-	cd "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT" "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT" "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug" "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug" "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/CMakeFiles/untitled1.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2 /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2 /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug /Users/marc-antoine/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug/CMakeFiles/untitled1.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/untitled1.dir/depend
 
