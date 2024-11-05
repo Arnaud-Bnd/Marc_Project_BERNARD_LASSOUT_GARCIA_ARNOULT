@@ -39,16 +39,18 @@ t_node *createTrainingTree(int value, int depth, int nbSons, t_localisation robo
 
     if (depth > 0) {
         for (int i = 0; i < nbSons; i++) {
-            updateLocalisation(&robot, tabAction[i]);
+            t_localisation new_robot = move(robot, tabAction[i]);
+//            updateLocalisation(&robot, tabAction[i]);
             //printf("%d\n", robot.ori);
             //printf("new robot = (%d,%d)\n", robot.pos.x, robot.pos.y);
-            if (isValidLocalisation(robot.pos, map.x_max - 1, map.y_max - 1)) {
-                int caseValue = map.costs[robot.pos.x][robot.pos.y];
+            if (isValidLocalisation(new_robot.pos, map.x_max - 1, map.y_max - 1)) {
+                int caseValue = map.costs[new_robot.pos.x][new_robot.pos.y];
                 if (0 < caseValue && caseValue < 10000) {
-//                    for(int j = i; j < nbSons - 1; j++){
-//                      tabAction[j] = tabAction[j + 1];
-//                    }
-                    node->sons[i] = createTrainingTree(caseValue, depth - 1, nbSons - 1, robot, tabAction, map);
+                    t_move *new_tabAction = (t_move *) malloc((nbSons - 1) * sizeof (t_move));
+                    for(int j = i; j < nbSons - 1; j++){
+                      new_tabAction[j] = tabAction[j + 1];
+                    }
+                    node->sons[i] = createTrainingTree(caseValue, depth - 1, nbSons - 1, new_robot, new_tabAction, map);
                 }
                 else{
                     node->sons[i] = createNode(caseValue, 0, depth);

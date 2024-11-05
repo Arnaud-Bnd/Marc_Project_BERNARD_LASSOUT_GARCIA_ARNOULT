@@ -33,7 +33,7 @@ int main() {
 
     /// Initialisation de l'enchaînement d'action
     t_move tabAction[5] = {F_10, F_20, F_30, T_LEFT, T_RIGHT };
-    //t_move tabAction[4] = {T_LEFT, F_10, T_RIGHT, F_10};
+//    t_move tabAction[1] = {T_LEFT};
 
 
     /// Création de l'arbre des chemins empreintés (3 choix/profondeur)
@@ -44,7 +44,7 @@ int main() {
     displayTree(new_tree, 0, 1);
 
     /// Test des résultats
-    printf("Position avant déplacement :\nx : %d\ny : %d\nori : %d\n", robot.pos.x, robot.pos.y, robot.ori);
+    printf("\nPosition avant déplacement :\nx : %d\ny : %d\nori : %d\n", robot.pos.x, robot.pos.y, robot.ori);
     printf("%d\n", map.costs[robot.pos.x][robot.pos.y]);
 //    t_localisation new_robot;
 //    new_robot.ori = rotate(robot.ori, T_LEFT);
@@ -56,7 +56,7 @@ int main() {
     printf("%d\n\n", map.costs[robot.pos.x][robot.pos.y]);
 
 
-    for(int i = 0; i < 5; i++){
+/*    for(int i = 0; i < 5; i++){
         printf("%d\n", tabAction[i]);
     }
     printf("\n");
@@ -69,7 +69,7 @@ int main() {
     for(int i = 0; i < 4; i++){
         printf("%d\n", tabAction[i]);
     }
-    printf("\n%d %d", map.x_max, map.y_max);
+    printf("\n%d %d", map.x_max, map.y_max);*/
 
     return 0;
 }
