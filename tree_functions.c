@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <time.h>
 #include <sys/time.h>
+#include <string.h>
+#include <limits.h>
 
 
 
@@ -35,47 +37,58 @@ t_node *createNode(int val, int nbSons, int depth){
 
 
 t_node *createTrainingTree(int value, int depth, int nbSons, t_localisation robot, t_move *tabAction, t_map map) {
+    /* Création nœud */
     t_node *node = createNode(value, nbSons, depth);
 
-    if (depth > 0) {
+    /* Vérification de la profondeur, doit toujours être supérieur à 0 */
+    if (nbSons > 0) {
+        /* Parcours de toutes les actions possibles */
         for (int i = 0; i < nbSons; i++) {
+            /* Effectuer l'action sélectionnée */
             t_localisation new_robot = move(robot, tabAction[i]);
 //            updateLocalisation(&robot, tabAction[i]);
             //printf("%d\n", robot.ori);
             //printf("new robot = (%d,%d)\n", robot.pos.x, robot.pos.y);
-            if (isValidLocalisation(new_robot.pos, map.x_max - 1, map.y_max - 1)) {
+
+            /* Vérifier la validité des coordonnées */
+            if (isValidLocalisation(new_robot.pos, map.y_max, map.x_max)) {
+                /* Stockage de la valeur de la case */
                 int caseValue = map.costs[new_robot.pos.x][new_robot.pos.y];
+                /* Si la valeur est comprise entre 0 et 1, créer un nœud avec nbSons - 1 */
                 if (0 < caseValue && caseValue < 10000) {
-                    t_move *new_tabAction = (t_move *) malloc((nbSons - 1) * sizeof (t_move));
-                    for(int j = i; j < nbSons - 1; j++){
-                      new_tabAction[j] = tabAction[j + 1];
+                    // Créer un nouveau tableau d'actions sans l'action courante
+                    t_move *new_tabAction = (t_move *) malloc((nbSons - 1) * sizeof(t_move));
+
+                    // Copier les éléments avant l'index courant
+                    for (int j = 0; j < i; j++) {
+                        new_tabAction[j] = tabAction[j];
                     }
-                    node->sons[i] = createTrainingTree(caseValue, depth - 1, nbSons - 1, new_robot, new_tabAction, map);
+
+                    // Copier les éléments après l'index courant
+                    for (int j = i; j < nbSons - 1; j++) {
+                        new_tabAction[j] = tabAction[j + 1];
+                    }
+
+                    /* Création du nœud */
+                    node->sons[i] = createTrainingTree(caseValue, depth + 1, nbSons - 1, new_robot, new_tabAction, map);
+//                    printf("[%d][%d] : %d\n", new_robot.pos.x, new_robot.pos.y, caseValue);
+                    free(new_tabAction);
                 }
+                /* Sinon créer un nœud sans fils */
                 else{
-                    node->sons[i] = createNode(caseValue, 0, depth);
+                    node->sons[i] = createNode(caseValue, 0, depth + 1);
+//                    printf("[%d][%d] : %d\n", new_robot.pos.x, new_robot.pos.y, caseValue);
+//                    printf("\n");
                 }
             }
+
+            /* Création d'un nœud avec la valeur 65535 qui indique qu'on est en dehors de la map */
             else {
-                node->sons[i] = createNode(10000, 0, depth);
+//                printf("[%d][%d] : ", new_robot.pos.x, new_robot.pos.y);
+//                printf("%d\t", map.costs[new_robot.pos.x][new_robot.pos.y]);
+//                printf("%d\n", tabAction[i]);
+                node->sons[i] = createNode(65535, 0, depth + 1);
             }
-        }
-    }
-    return node;
-}
-
-t_node *createTrainingTree2(int value, int depth, int nbSons, t_localisation robot, t_move *tabAction, t_map map) {
-    t_node *node = createNode(value, nbSons, depth);
-
-    if (depth > 0) {
-        for (int i = 0; i < nbSons; i++) {
-            updateLocalisation(&robot, tabAction[i]);
-            int caseValue = map.costs[robot.pos.x][robot.pos.y];
-            for (int j = i; j < nbSons - 1; j++){
-                tabAction[j] = tabAction[j + 1];
-            }
-            tabAction = (t_move *) realloc(tabAction, (nbSons - 1) * sizeof(t_move));
-            node->sons[i] = createTrainingTree(caseValue, depth - 1, nbSons - 1, robot, tabAction, map);
         }
     }
     return node;
@@ -138,4 +151,23 @@ t_move *tirageAction(){
     }
 
     return tab_action;
+}
+
+
+int findMin(t_node *tree, int depth, int depthMax, int min){
+    if (tree == NULL){
+        return INT_MAX;
+    }
+
+    if (depth < depthMax){
+        for (int i = 0; i < tree->nbSons; i++){
+            if (tree->sons[i]->value < min){
+                min = tree->sons[i]->value;
+            }
+            if (tree->sons[i]->nbSons == 0) {
+                findMin(tree->sons[i], depth + 1, depthMax, min);
+            }
+        }
+    }
+    return min;
 }

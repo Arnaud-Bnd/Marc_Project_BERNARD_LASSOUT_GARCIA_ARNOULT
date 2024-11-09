@@ -69,4 +69,6 @@ void displayTree(t_node *root, int depth, int is_last_child);
 
 t_move *tirageAction();
 
+int findMin(t_node *tree, int depth, int depthMax, int min);
+
 #endif //MARC_PROJECT_BERNARD_LASSOUT_GARCIA_ARNOULT_TREE_FUNCTIONS_H
