@@ -33,7 +33,10 @@ int main() {
 
     /// Initialisation de l'enchaînement d'action
     t_move tabAction[5] = {F_10, F_20, F_30, T_LEFT, T_RIGHT };
-//    t_move tabAction[1] = {T_LEFT};
+    t_move tabActionleft[1] = {T_LEFT};
+
+    t_move * tabActiontirage=tirageAction();
+
 
 
     /// Création de l'arbre des chemins empreintés (3 choix/profondeur)
@@ -71,7 +74,14 @@ int main() {
     }
     printf("\n%d %d", map.x_max, map.y_max);*/
 
-    printf("Minimum : %d\n", findMin(new_tree, 0, 3, 10000));
+
+    printf("Minimum : %d\n\n\n\n\n\n\n\n\n", findMin(new_tree, 0, 3, 10000));
+    //Test tirage aleatoire action
+
+    t_node *tree_action_aleatoire = createTrainingTree(value, 0, 5, robot, tabActiontirage, map);
+
+    /// Affichage de l'arbre des chemins empreintés
+    displayTree(tree_action_aleatoire, 0, 1);
 
     return 0;
 }
