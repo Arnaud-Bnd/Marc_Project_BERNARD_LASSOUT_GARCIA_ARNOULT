@@ -71,4 +71,7 @@ t_move *tirageAction();
 
 int findMin(t_node *tree, int depth, int depthMax, int min);
 
+t_move *tirage_aleatoire_adaptatif();
+
+
 #endif //MARC_PROJECT_BERNARD_LASSOUT_GARCIA_ARNOULT_TREE_FUNCTIONS_H
