@@ -65,7 +65,7 @@ t_node *createTrainingTree(int value, int depth, int nbSons, t_localisation robo
  * @param is_last_child : variable indicating that this is the last node
  */
 void displayTree(t_node *root, int depth, int is_last_child);
-
+int findMin(t_node *tree, int depth, int depthMax, int min);
 
 t_move *tirageAction();
 

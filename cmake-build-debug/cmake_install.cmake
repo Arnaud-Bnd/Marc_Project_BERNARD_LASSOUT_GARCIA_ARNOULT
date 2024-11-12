@@ -1,8 +1,8 @@
-# Install script for directory: /Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT
+# Install script for directory: C:/Users/ivana/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/ivana/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

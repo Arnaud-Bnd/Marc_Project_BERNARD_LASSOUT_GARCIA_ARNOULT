@@ -38,10 +38,11 @@ int main() {
 
     /// Création de l'arbre des chemins empreintés (3 choix/profondeur)
     int value = map.costs[robot.pos.x][robot.pos.y];
-    t_node *new_tree = createTrainingTree(value, 3, 5, robot, tabAction, map);
+    t_node *new_tree = createTrainingTree(value, 0, 9, robot, tabAction, map);
+
 
     /// Affichage de l'arbre des chemins empreintés
-    displayTree(new_tree, 0, 1);
+     displayTree(new_tree, 0, 1);
 
     /// Test des résultats
     printf("\nPosition avant déplacement :\nx : %d\ny : %d\nori : %d\n", robot.pos.x, robot.pos.y, robot.ori);
@@ -54,6 +55,9 @@ int main() {
     //robot.pos.y = robot.pos.y - 1;
     printf("Position après déplacement :\nx : %d\ny : %d\nori : %d\n", robot.pos.x, robot.pos.y, robot.ori);
     printf("%d\n\n", map.costs[robot.pos.x][robot.pos.y]);
+
+    /// test afficher min
+    printf("min : %d\n",findMin(new_tree,0,9,INT_MAX));
 
 
 /*    for(int i = 0; i < 5; i++){
