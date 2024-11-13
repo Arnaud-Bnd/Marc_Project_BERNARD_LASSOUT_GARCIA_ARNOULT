@@ -243,6 +243,26 @@ t_move *tirage_aleatoire_adaptatif() {
     return tabAction;
 }
 
+int findMin(t_node *tree, int depth, int depthMax, int min) {
+    int i;
+    if (tree == NULL){
+        printf("L'arbre est vide");
+        return min;
+    }
+    if (depth <= depthMax) {
+        for (i = 0; i < tree->nbSons; i++) {
+            if (tree->sons[i]->nbSons==0) {
+                if (tree->sons[i]->value < min) {
+                    min = tree->sons[i]->value;
+                }
+            }
+            min = findMin(tree->sons[i], depth + 1, depthMax, min);
+        }
+    }
+    return min;
+}
+
+
 t_node* findMinNode(t_node *tree, int depth, int depthMax, t_node *minNode) {
     if (tree == NULL) {
         printf("L'arbre est vide\n");

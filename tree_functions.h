@@ -82,7 +82,7 @@ void displayTree(t_node *root, int depth, int is_last_child);
 
 t_move *tirageAction();
 
-t_node *findMin(t_node *tree, int depth, int depthMax, int min);
+int findMin(t_node *tree, int depth, int depthMax, int min);
 
 t_node* findMinNode(t_node *tree, int depth, int depthMax, t_node *minNode);
 
