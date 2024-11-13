@@ -11,9 +11,11 @@
 
 typedef struct s_node{
     int value;  // Valeur stockée dans le nœud
-    int depth;
-    struct s_node **sons;
+    int depth;  // Profondeur du nœud
+    struct s_node **sons;   // Tableau des fils
     int nbSons; // Nombre de fils (taille physique)
+    struct s_node *prev;    // Pointeur vers le nœud précédent
+    t_move action;  // Action du nœud
 } t_node;
 
 
@@ -41,7 +43,18 @@ t_node *createTree(int, t_map, int, int);
  * @param depth : the level of the node
  * @return A node
  */
-t_node *createNode(int val, int nbSons, int depth);
+t_node *createRoot(int val, int nbSons, int depth);
+
+/**
+ * @brief Function to create a node of the case
+ * @param val : the value stocked in the node
+ * @param nbSons : the number of sons in the node
+ * @param depth : the level of the node
+ * @param prev : the precedent node
+ * @param action : the current action of the node
+ * @return A node
+ */
+t_node *createNode(int val, int nbSons, int depth, t_node *prev, t_move action);
 
 
 /**
@@ -54,7 +67,7 @@ t_node *createNode(int val, int nbSons, int depth);
  * @param map : the map use for the tree
  * @return A node
  */
-t_node *createTrainingTree(int value, int depth, int nbSons, t_localisation robot, t_move *tabAction, t_map map);
+t_node *createTrainingTree(int value, int depth, int nbSons, t_localisation robot, t_move *tabAction, t_map map, t_node *prev, t_move action);
 //t_node *createTrainingTree(int value, int depth, int nbSons);
 
 
@@ -69,7 +82,10 @@ void displayTree(t_node *root, int depth, int is_last_child);
 
 t_move *tirageAction();
 
-int findMin(t_node *tree, int depth, int depthMax, int min);
+t_node *findMin(t_node *tree, int depth, int depthMax, int min);
+
+t_node* findMinNode(t_node *tree, int depth, int depthMax, t_node *minNode);
+
 
 t_move *tirage_aleatoire_adaptatif();
 

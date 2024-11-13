@@ -13,17 +13,17 @@
 
 
 t_node *createTree(int tree_depth, t_map map, int x, int y){
-    t_node *tree = createNode(map.costs[x][y], 5, 0);
+    t_node *tree = createRoot(map.costs[x][y], 5, 0);
     if (tree_depth > 0) {
         for (int i = 0; i < 5; i++) {
-            tree->sons[i] = createNode(i + 1, 5, tree->depth + 1);
+            tree->sons[i] = createRoot(i + 1, 5, tree->depth + 1);
         }
     }
     return tree;
 }
 
 
-t_node *createNode(int val, int nbSons, int depth){
+t_node *createRoot(int val, int nbSons, int depth){
     t_node *new = (t_node *) malloc(sizeof(t_node));
     new->value = val;   // Valeur stocké
     new->depth = depth; // Profondeur du nœud
@@ -32,13 +32,35 @@ t_node *createNode(int val, int nbSons, int depth){
     for (int i = 0; i < new->nbSons; i++){
         new->sons[i] = NULL;
     }
+    new->prev = NULL;
+    new->action = -1;
+    return new;
+}
+
+t_node *createNode(int val, int nbSons, int depth, t_node *prev, t_move action){
+    t_node *new = (t_node *) malloc(sizeof(t_node));
+    new->value = val;   // Valeur stocké
+    new->depth = depth; // Profondeur du nœud
+    new->nbSons = nbSons;    // Nombre de nœuds fils
+    new->sons = (t_node **) malloc(new->nbSons * sizeof(t_node *));
+    for (int i = 0; i < new->nbSons; i++){
+        new->sons[i] = NULL;
+    }
+    new->prev = prev;
+    new->action = action;
     return new;
 }
 
 
-t_node *createTrainingTree(int value, int depth, int nbSons, t_localisation robot, t_move *tabAction, t_map map) {
+t_node *createTrainingTree(int value, int depth, int nbSons, t_localisation robot, t_move *tabAction, t_map map, t_node *prev, t_move action) {
     /* Création nœud */
-    t_node *node = createNode(value, nbSons, depth);
+    t_node *node;
+    if (depth == 0){
+         node = createRoot(value, nbSons, depth);
+    }
+    else {
+         node = createNode(value, nbSons, depth, prev, action);
+    }
 
     /* Vérification de la profondeur, doit toujours être supérieur à 0 */
     if (nbSons > 0) {
@@ -70,13 +92,13 @@ t_node *createTrainingTree(int value, int depth, int nbSons, t_localisation robo
                     }
 
                     /* Création du nœud */
-                    node->sons[i] = createTrainingTree(caseValue, depth + 1, nbSons - 1, new_robot, new_tabAction, map);
+                    node->sons[i] = createTrainingTree(caseValue, depth + 1, nbSons - 1, new_robot, new_tabAction, map, node, tabAction[i]);
 //                    printf("[%d][%d] : %d\n", new_robot.pos.x, new_robot.pos.y, caseValue);
                     free(new_tabAction);
                 }
                 /* Sinon créer un nœud sans fils */
                 else{
-                    node->sons[i] = createNode(caseValue, 0, depth + 1);
+                    node->sons[i] = createNode(caseValue, 0, depth + 1, node, tabAction[i]);
 //                    printf("[%d][%d] : %d\n", new_robot.pos.x, new_robot.pos.y, caseValue);
 //                    printf("\n");
                 }
@@ -87,7 +109,7 @@ t_node *createTrainingTree(int value, int depth, int nbSons, t_localisation robo
 //                printf("[%d][%d] : ", new_robot.pos.x, new_robot.pos.y);
 //                printf("%d\t", map.costs[new_robot.pos.x][new_robot.pos.y]);
 //                printf("%d\n", tabAction[i]);
-                node->sons[i] = createNode(65535, 0, depth + 1);
+                node->sons[i] = createNode(65535, 0, depth + 1, node, tabAction[i]);
             }
         }
     }
@@ -114,8 +136,12 @@ void displayTree(t_node *root, int depth, int is_last_child) {
     }
 
     // Affichage de la valeur du nœud
-    printf("%d\n", root->value);
-
+    if (root->depth == 0) {
+        printf("%d\t%d\n", root->value, root->action);
+    }
+    else {
+        printf("%d\t%d\t%d\n", root->value, root->prev->value, root->action);
+    }
     // Affichage récursif pour chaque enfant
     for (int i = 0; i < root->nbSons; i++) {
         int is_last = (i == root->nbSons - 1);
@@ -169,24 +195,6 @@ t_move* tirageAction() {
 }
 
 
-int findMin(t_node *tree, int depth, int depthMax, int min){
-    if (tree == NULL){
-        return INT_MAX;
-    }
-
-    if (depth < depthMax){
-        for (int i = 0; i < tree->nbSons; i++){
-            if (tree->sons[i]->value < min){
-                min = tree->sons[i]->value;
-            }
-            if (tree->sons[i]->nbSons == 0) {
-                findMin(tree->sons[i], depth + 1, depthMax, min);
-            }
-        }
-    }
-    return min;
-}
-
 t_move *tirage_aleatoire_adaptatif() {
     int num_tirages = 9, k = 0;
     double probabilites[] = {0.22, 0.15, 0.07, 0.07, 0.21, 0.21, 0.07};
@@ -233,4 +241,27 @@ t_move *tirage_aleatoire_adaptatif() {
     }
 
     return tabAction;
+}
+
+t_node* findMinNode(t_node *tree, int depth, int depthMax, t_node *minNode) {
+    if (tree == NULL) {
+        printf("L'arbre est vide\n");
+        return minNode;
+    }
+
+    if (depth <= depthMax) {
+        for (int i = 0; i < tree->nbSons; i++) {
+            // Si c'est une feuille
+            if (tree->sons[i]->nbSons == 0) {
+                // Si c'est le premier nœud minimum ou si la valeur est plus petite que le minNode actuel
+                if (minNode == NULL || tree->sons[i]->value < minNode->value) {
+                    minNode = tree->sons[i];
+                }
+            }
+            // Appel récursif pour parcourir les nœuds enfants
+            minNode = findMinNode(tree->sons[i], depth + 1, depthMax, minNode);
+        }
+    }
+
+    return minNode;
 }

@@ -4,6 +4,7 @@
 #include "map.h"
 #include "moves.h"
 #include "tree_functions.h"
+#include <limits.h>
 
 int main() {
     t_map map = createMapFromFile("../maps/example1.map");
@@ -32,16 +33,16 @@ int main() {
     t_localisation robot = loc_init(3, 0, EAST);
 
     /// Initialisation de l'enchaînement d'action
-    t_move tabAction[5] = {F_10, F_20, F_30, T_LEFT, T_RIGHT };
+//    t_move tabAction[5] = {F_10, F_20, F_30, T_LEFT, T_RIGHT };
 //    t_move tabActionleft[1] = {T_LEFT};
 
-    t_move * tabActiontirage=tirageAction();
+    t_move * tabAction = tirage_aleatoire_adaptatif();
 
 
 
     /// Création de l'arbre des chemins empreintés (3 choix/profondeur)
     int value = map.costs[robot.pos.x][robot.pos.y];
-    t_node *new_tree = createTrainingTree(value, 0, 5, robot, tabAction, map);
+    t_node *new_tree = createTrainingTree(value, 0, 9, robot, tabAction, map, NULL, -1);
 
     /// Affichage de l'arbre des chemins empreintés
     displayTree(new_tree, 0, 1);
@@ -59,7 +60,11 @@ int main() {
     printf("%d\n\n", map.costs[robot.pos.x][robot.pos.y]);
 
 
-    printf("Minimum : %d\n", findMin(new_tree, 0, 3, 10000));
+//    t_node *mini_node = findMin(new_tree, 0, 9, INT_MAX);
+    t_node *maxnode = createRoot(INT_MAX, 0, 0);
+    t_node *mini_node = findMinNode(new_tree, 0, 9, maxnode);
+
+    printf("Minimum : %d\n", mini_node->value);
 
     return 0;
 }
