@@ -8,6 +8,7 @@
 #include "map.h"
 #include "moves.h"
 #include "loc.h"
+#include "stack.h"
 
 typedef struct s_node{
     int value;  // Valeur stockée dans le nœud
@@ -85,6 +86,8 @@ t_move *tirageAction();
 int findMin(t_node *tree, int depth, int depthMax, int min);
 
 t_node* findMinNode(t_node *tree, int depth, int depthMax, t_node *minNode);
+
+t_stack path_min_choices(t_node *tree, t_node *min);
 
 
 t_move *tirage_aleatoire_adaptatif();

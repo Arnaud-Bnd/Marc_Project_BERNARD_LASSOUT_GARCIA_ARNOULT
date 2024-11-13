@@ -9,6 +9,7 @@
 #include <sys/time.h>
 #include <string.h>
 #include <limits.h>
+#include "stack.h"
 
 
 
@@ -284,4 +285,13 @@ t_node* findMinNode(t_node *tree, int depth, int depthMax, t_node *minNode) {
     }
 
     return minNode;
+}
+
+t_stack path_min_choices(t_node *tree, t_node *min){
+    t_stack pile = createStack(9);
+    while (min->prev != NULL){
+        push(&pile, min->value);
+        min = min->prev;
+    }
+    return pile;
 }

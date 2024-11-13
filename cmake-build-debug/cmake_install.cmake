@@ -1,4 +1,4 @@
-# Install script for directory: /Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT
+# Install script for directory: /Users/laetitiaarnoult/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/laetitiaarnoult/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

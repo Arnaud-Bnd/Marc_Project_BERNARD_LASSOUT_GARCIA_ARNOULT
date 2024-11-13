@@ -1,19 +1,10 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT" -B "/Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug"
-CMake Deprecation Warning:
-  Support for "Extra Generators" like
-
-    CodeBlocks
-
-  is deprecated and will be removed from a future version of CMake.  IDEs may
-  use the cmake-file-api(7) to view CMake-generated project build trees.
-
-
--- The C compiler identification is AppleClang 16.0.0.16000026
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /Users/laetitiaarnoult/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2 -B /Users/laetitiaarnoult/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug
+-- The C compiler identification is AppleClang 15.0.0.15000040
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
 -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (2.3s)
+-- Configuring done (0.2s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/arnaudbernard/Documents/01 - Efrei/Année 2/S1/Algorithmique et structure de données 2/Projet/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT/cmake-build-debug
+-- Build files have been written to: /Users/laetitiaarnoult/CLionProjects/Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT2/cmake-build-debug
