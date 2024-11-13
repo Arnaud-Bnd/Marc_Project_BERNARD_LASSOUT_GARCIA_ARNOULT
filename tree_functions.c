@@ -124,32 +124,47 @@ void displayTree(t_node *root, int depth, int is_last_child) {
 }
 
 
-t_move *tirageAction(){
-    t_move *tab_action = (t_move *) malloc(5 * sizeof(t_move));
 
-    double forward_10 = 0.22, forward_20 = 0.37, forward_30 = 0.44, backward = 0.51, t_left = 0.72, t_right = 0.93, u_turn = 1;
-    srand(clock());
+t_move* tirageAction() {
 
-    for (int i = 0; i < 5; i++){
-        double randomValue = (double) rand()/RAND_MAX;
-        if (randomValue <= forward_10)
-            tab_action[i] = F_10;
-        else if (forward_10 <= randomValue && randomValue <= forward_20--)
-            tab_action[i] = F_20;
-        else if (forward_20 <= randomValue && randomValue <= forward_30--)
-            tab_action[i] = F_30;
-        else if (forward_30 <= randomValue && randomValue <= backward--)
-            tab_action[i] = B_10;
-        else if (backward <= randomValue && randomValue <= t_left--)
-            tab_action[i] = T_LEFT;
-        else if (t_left <= randomValue && randomValue <= t_right--)
-            tab_action[i] = T_RIGHT;
-        else if (t_right <= randomValue && randomValue <= u_turn--)
-            tab_action[i] = U_TURN;
-        else
-            i--;
+    char* action_names[] = {"forward_10", "forward_20", "forward_30", "backward", "t_left", "t_right", "u_turn"};
+    int nb_action=9;
+
+    // Allocation du tableau de 9 actions
+    t_move* tab_action = (t_move*) malloc(nb_action * sizeof(t_move));
+
+    double probabilites[] = {0.22, 0.15, 0.07, 0.07, 0.21, 0.21, 0.07};
+    int num_actions = sizeof(probabilites) / sizeof(probabilites[0]);
+
+
+    srand(clock()); // Initialiser le générateur de nombres aléatoires une fois
+
+    for (int i = 0; i < nb_action; i++) {
+        double total = 0.0;
+
+        // Calcul de la somme des probabilités pour normalisation
+        for (int j = 0; j < num_actions; j++) {
+            total += probabilites[j];
+        }
+
+        // Génération d'un nombre aléatoire dans l'intervalle [0, total]
+        double randomValue = ((double) rand() / RAND_MAX) * total;
+        double cumulative = 0.0;
+        int action = -1;
+
+        // Détermination de l'action choisie
+        for (int j = 0; j < num_actions; j++) {
+            cumulative += probabilites[j];
+            if (randomValue <= cumulative) {
+                action = j;
+                break;
+            }
+        }
+        printf("test");
+        printf("Tirage %d: %s (randomValue = %f)\n", i + 1, action_names[action], randomValue);
+        tab_action[i] = (t_move) action;
+        probabilites[action] -= 0.01;
     }
-
     return tab_action;
 }
 
