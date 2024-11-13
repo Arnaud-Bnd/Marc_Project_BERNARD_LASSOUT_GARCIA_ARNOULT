@@ -186,3 +186,51 @@ int findMin(t_node *tree, int depth, int depthMax, int min){
     }
     return min;
 }
+
+t_move *tirage_aleatoire_adaptatif() {
+    int num_tirages = 9, k = 0;
+    double probabilites[] = {0.22, 0.15, 0.07, 0.07, 0.21, 0.21, 0.07};
+    t_move action_names[] = {F_10, F_20, F_30, B_10, T_LEFT, T_RIGHT, U_TURN};
+    t_move *tabAction = (t_move *) malloc(9 * sizeof (t_move));
+
+// Indices pour chaque action
+    int num_actions = sizeof(probabilites) / sizeof(probabilites[0]);
+
+    srand(time(NULL));
+
+    for (int t = 0; t < num_tirages; t++) {
+        double total = 0.0;
+
+        // Calcul de la somme des probabilités pour normalisation
+        for (int i = 0; i < num_actions; i++) {
+            total += probabilites[i];
+        }
+
+        // Génération d'un nombre aléatoire dans l'intervalle [0, total]
+        double r = ((double) rand() / RAND_MAX) * total;
+        double intervalle = 0.0;
+        int action = -1;
+
+        // Détermination de l'action choisie
+        for (int i = 0; i < num_actions; i++) {
+            intervalle += probabilites[i];
+            if (r <= intervalle) {
+                action = i;
+                break;
+            }
+        }
+
+        // Affichage de l'action sélectionnée
+        if (action != -1) {
+            tabAction[k++] = action_names[action];
+            printf("Tirage %d: %d\n", t + 1, action_names[action]);
+
+            // Réduction de la probabilité de l'action choisie de 0.01, si elle est > 0.01
+            if (probabilites[action] > 0.01) {
+                probabilites[action] -= 0.01;
+            }
+        }
+    }
+
+    return tabAction;
+}
