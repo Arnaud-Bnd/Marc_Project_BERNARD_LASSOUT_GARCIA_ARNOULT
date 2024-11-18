@@ -138,10 +138,12 @@ void displayTree(t_node *root, int depth, int is_last_child) {
 
     // Affichage de la valeur du nœud
     if (root->depth == 0) {
-        printf("%d\t%d\n", root->value, root->action);
+        printf("%d\n", root->value);
+//        printf("%d\t%d\n", root->value, root->action);
     }
     else {
-        printf("%d\t%d\t%d\n", root->value, root->prev->value, root->action);
+        printf("%d\n", root->value);
+//        printf("%d\t%d\t%d\n", root->value, root->prev->value, root->action);
     }
     // Affichage récursif pour chaque enfant
     for (int i = 0; i < root->nbSons; i++) {
@@ -287,10 +289,10 @@ t_node* findMinNode(t_node *tree, int depth, int depthMax, t_node *minNode) {
     return minNode;
 }
 
-t_stack path_min_choices(t_node *tree, t_node *min){
+t_stack path_min_choices(t_node *min){
     t_stack pile = createStack(9);
     while (min->prev != NULL){
-        push(&pile, min->value);
+        push(&pile, min->action);
         min = min->prev;
     }
     return pile;

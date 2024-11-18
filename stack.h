@@ -5,12 +5,14 @@
 #ifndef UNTITLED1_STACK_H
 #define UNTITLED1_STACK_H
 
+#include "moves.h"
+
 /**
  * @brief Structure for the stack of integers
  */
 typedef struct s_stack
 {
-    int *values;
+    t_move *moves;
     int size;
     int nbElts;
 } t_stack;
@@ -23,26 +25,26 @@ typedef struct s_stack
 t_stack createStack(int);
 
 /**
- * @brief Function to push a value in the stack
+ * @brief Function to push a move in the stack
  * @param pointer to the stack
- * @param value : the value to push
+ * @param move : the move to push
  * @return none
  */
-void push(t_stack *, int);
+void push(t_stack *, t_move);
 
 /**
- * @brief Function to pop a value from the stack
+ * @brief Function to pop a move from the stack
  * @param : pointer to the stack
- * @return the value popped
+ * @return the move popped
  */
-int pop(t_stack *);
+t_move pop(t_stack *);
 
 /**
- * @brief Function to get the top value of the stack
+ * @brief Function to get the top move of the stack
  * @param stack : the stack
- * @return the top value
+ * @return the top move
  */
-int top(t_stack);
+t_move top(t_stack);
 
 
 #endif //UNTITLED1_STACK_H

@@ -65,9 +65,9 @@ int main() {
     t_node *mini_node = findMinNode(new_tree, 0, 9, maxnode);
 
     printf("Minimum : %d\n", mini_node->value);
-    t_stack stack = path_min_choices(new_tree, mini_node);
+    t_stack stack = path_min_choices(mini_node);
     for(int i = 0; i<=stack.size; i++){
-        printf("%d\n", stack.values[i]);
+        printf("%d\n", stack.moves[i]);
     }
 
 
