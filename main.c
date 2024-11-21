@@ -88,7 +88,7 @@ int main() {
     textures[CREVASSE] = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("../Skins/Crevasse.bmp"));
 
     // Charger l'image du robot
-    robotTexture = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("vRobot.bmp"));
+    robotTexture = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("../Skins/Robot.bmp"));
 
     int running = 1;
 
