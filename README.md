@@ -24,16 +24,16 @@ Pour réaliser ce logiciel de déplacement qui doit secourir MARC, nous devons r
 - L'étape 3 nous a permis d'améliorer l'interface graphique de notre logiciel afin de le rendre plus compréhensible. 
 
 ## Structure
-- Le fichier loc.h
-- Le fichier loc.c
-- Le fichier map.h
-- Le fichier map.c
-- Le fichier moves.h
-- Le fichier moves.c
-- Le fichier queue.h
-- Le fichier queue.c
-- Le fichier stack.h
-- Le fichier stack.c
-- Le fichier tree_functions.h
-- Le fichier tree_functions.c
-- Le fichier main.c
+- Le fichier loc.h contient les prototypes et les structures permettant de déplacer notre rover MARC
+- Le fichier loc.c contient toutes les fonctions permettant de guider le rover MARC
+- Le fichier map.h contient les structures et les prototypes des fonctions permettant de créer et de gérer des cartes géographiques de notre rover MARC
+- Le fichier map.c contient toutes les fonctions énoncées dans le fichier précédent
+- Le fichier moves.h contient les prototypes de fonctions permettant de fixer ou de modifier la localisation du rover MARC
+- Le fichier moves.c contient toutes les fonctions énoncées dans le fichier précédent
+- Le fichier queue.h contient tous les prototypes des fonctions permettant de manipuler des files
+- Le fichier queue.c contient toutes les fonctions énoncées dans le fichier précédent
+- Le fichier stack.h contient tous les prototypes des fonctions permettant de manipuler des piles
+- Le fichier stack.c contient toutes les fonctions énoncées dans le fichier précédent
+- Le fichier tree_functions.h contient les prototypes de notre logiciel ainsi que les structures associées à notre arbre N-aire
+- Le fichier tree_functions.c contient toutes les fonctions permettant de manipuler et de lire cet arbre N-aire afin d'élaborer le chemin que devra emprunter le rover MARC
+- Le fichier main.c est le fichier où le chemin est trouvé par notre logiciel et est transmis au rover MARC débutant ainsi son guidage
