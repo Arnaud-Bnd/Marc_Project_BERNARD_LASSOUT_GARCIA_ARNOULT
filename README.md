@@ -10,6 +10,8 @@
 </p>
 </div>
 
+## Préambule
+
 ## Déroulement du Projet
 Pour réaliser ce logiciel de déplacement qui doit secourir MARC, nous devons réaliser 3 étapes.
 - L'étape 1 consiste au développement des structure de données pour l'arbre de sélection des déplacements et de créer un arbre avec 3 choix parmi 4 ou 5 valeurs possibles. Cette étape a été primordiale pour correctement mettre au point les algorithmes de construction de l'arbre ainsi que ceux de la recherche de la feuille de valeur minimale  et du chemin depuis la racine vers cette feuille.
