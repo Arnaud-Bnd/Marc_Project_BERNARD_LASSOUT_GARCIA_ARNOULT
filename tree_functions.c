@@ -138,10 +138,12 @@ void displayTree(t_node *root, int depth, int is_last_child) {
 
     // Affichage de la valeur du nœud
     if (root->depth == 0) {
-        printf("%d\t%d\n", root->value, root->action);
+        printf("%d\n", root->value);
+//        printf("%d\t%d\n", root->value, root->action);
     }
     else {
-        printf("%d\t%d\t%d\n", root->value, root->prev->value, root->action);
+        printf("%d\n", root->value);
+//        printf("%d\t%d\t%d\n", root->value, root->prev->value, root->action);
     }
     // Affichage récursif pour chaque enfant
     for (int i = 0; i < root->nbSons; i++) {

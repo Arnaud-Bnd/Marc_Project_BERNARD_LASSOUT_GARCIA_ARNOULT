@@ -85,11 +85,29 @@ t_move *tirageAction();
 
 int findMin(t_node *tree, int depth, int depthMax, int min);
 
+
+/**
+ * @brief Function to find the minimum value among the leafs of the tree
+ * @param tree : the pointer to the root of the tree
+ * @param depth : the depth of the actual node
+ * @param depthMax : the maximum depth of the tree
+ * @param minNode : the pointer of the minimum leaf already find
+ * @return The minimum leaf of the tree
+ */
 t_node* findMinNode(t_node *tree, int depth, int depthMax, t_node *minNode);
 
+/**
+ * @brief Function to make a stack of action to go to the minimum leaf
+ * @param min : the pointer of the minimum leaf node
+ * @return A stack of actions
+ */
 t_stack path_min_choices(t_node *min);
 
 
+/**
+ * @brief Function to make the random draw of the 9 actions
+ * @return A tab of 9 actions
+ */
 t_move *tirage_aleatoire_adaptatif();
 
 
