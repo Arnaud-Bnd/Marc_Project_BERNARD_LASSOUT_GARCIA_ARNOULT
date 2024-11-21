@@ -24,3 +24,16 @@ Pour réaliser ce logiciel de déplacement qui doit secourir MARC, nous devons r
 - L'étape 3 nous a permis d'améliorer l'interface graphique de notre logiciel afin de le rendre plus compréhensible. 
 
 ## Structure
+- Le fichier loc.h
+- Le fichier loc.c
+- Le fichier map.h
+- Le fichier map.c
+- Le fichier moves.h
+- Le fichier moves.c
+- Le fichier queue.h
+- Le fichier queue.c
+- Le fichier stack.h
+- Le fichier stack.c
+- Le fichier tree_functions.h
+- Le fichier tree_functions.c
+- Le fichier main.c
