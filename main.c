@@ -38,34 +38,21 @@ int main() {
     t_localisation robot = loc_init(3, 4, EAST);
 
     /// Initialisation de l'enchaînement d'action
-//    t_move tabAction[5] = {F_10, F_20, F_30, T_LEFT, T_RIGHT };
+    t_move tabAction[5] = {F_10, F_20, F_30, T_LEFT, T_RIGHT };
 //    t_move tabActionleft[1] = {T_LEFT};
 
-    t_move * tabAction = tirage_aleatoire_adaptatif();
+//    t_move * tabAction = tirage_aleatoire_adaptatif();
 
 
 
     /// Création de l'arbre des chemins empreintés (3 choix/profondeur)
     int value = map.costs[robot.pos.x][robot.pos.y];
-    printf("x_max = %d\n", map.x_max);
     start = clock();
     t_node *new_tree = createTree(value, 0, 9, 0, robot, tabAction, map, NULL, -1);
     end = clock();
 
     /// Affichage de l'arbre des chemins empreintés
-    displayTree(new_tree, 0, 1);
-
-    /// Test des résultats
-    printf("\nPosition avant déplacement :\nx : %d\ny : %d\nori : %d\n", robot.pos.x, robot.pos.y, robot.ori);
-    printf("%d\n", map.costs[robot.pos.x][robot.pos.y]);
-//    t_localisation new_robot;
-//    new_robot.ori = rotate(robot.ori, T_LEFT);
-//    new_robot = translate(robot, T_LEFT);
-    updateLocalisation(&robot, T_LEFT);
-    printf("isValidLocation : %d\n", isValidLocalisation(robot.pos, map.x_max - 1, map.y_max - 1));
-    //robot.pos.y = robot.pos.y - 1;
-    printf("Position après déplacement :\nx : %d\ny : %d\nori : %d\n", robot.pos.x, robot.pos.y, robot.ori);
-    printf("%d\n\n", map.costs[robot.pos.x][robot.pos.y]);
+//    displayTree(new_tree, 0, 1);
 
 
 //    t_node *mini_node = findMin(new_tree, 0, 9, INT_MAX);
@@ -75,6 +62,12 @@ int main() {
     printf("Minimum : %d\n", mini_node->value);
     t_stack stack = path_min_choices( mini_node);
 
+    for (int i = 4; i >= 0; i--) {
+        start = clock();
+        t_node *new_tree = createTree(value, 0, 9, i, robot, tabAction, map, NULL, -1);
+        end = clock();
+        printf("Temps construction de l'arbre avec %d choix : %f\n", 9 - i, ((double) (end - start)) / CLOCKS_PER_SEC);
+    }
 
     int width = map.x_max;
     int height = map.y_max;

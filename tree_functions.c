@@ -174,7 +174,7 @@ t_move *tirage_aleatoire_adaptatif() {
         }
 
         // Affichage de l'action sélectionnée
-        if (action != -1) {
+        /*if (action != -1) {
             tabAction[k++] = action_names[action];
             printf("Tirage %d: %d\n", t + 1, action_names[action]);
 
@@ -182,7 +182,7 @@ t_move *tirage_aleatoire_adaptatif() {
             if (probabilites[action] > 0.01) {
                 probabilites[action] -= 0.01;
             }
-        }
+        }*/
     }
 
     return tabAction;
