@@ -6,15 +6,20 @@
 #define UNTITLED1_QUEUE_H
 #include "loc.h"
 /**
- * @brief Structure for the queue of integers
+ * @brief Structure for the queue of t_position
+ * @param pos : table of the position
+ * @param size : the size max of the queue
+ * @param last : the index of the last element of the queue
+ * @param first : the index of the first element of the queue
  */
 typedef struct s_queue
 {
-    t_position *values;
+    t_position *pos;
     int size;
     int last;
     int first;
 } t_queue;
+
 
 /**
  * @brief Function to create a queue
@@ -23,6 +28,7 @@ typedef struct s_queue
  */
 t_queue createQueue(int);
 
+
 /**
  * @brief Function to enqueue a value in the queue
  * @param p_queue : pointer to the queue
@@ -30,6 +36,7 @@ t_queue createQueue(int);
  * @return none
  */
 void enqueue(t_queue *,t_position);
+
 
 /**
  * @brief Function to dequeue a value from the queue

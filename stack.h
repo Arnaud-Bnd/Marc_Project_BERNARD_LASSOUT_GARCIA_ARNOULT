@@ -9,6 +9,9 @@
 
 /**
  * @brief Structure for the stack of integers
+ * @param moves : table of the moves
+ * @param size : the size max of the stack
+ * @param nbElts : the number of elements in the stack
  */
 typedef struct s_stack
 {
@@ -17,12 +20,14 @@ typedef struct s_stack
     int nbElts;
 } t_stack;
 
+
 /**
  * @brief Function to create a stack
  * @param size : the size of the stack
  * @return the stack
  */
 t_stack createStack(int);
+
 
 /**
  * @brief Function to push a move in the stack
@@ -32,12 +37,14 @@ t_stack createStack(int);
  */
 void push(t_stack *, t_move);
 
+
 /**
  * @brief Function to pop a move from the stack
  * @param : pointer to the stack
  * @return the move popped
  */
 t_move pop(t_stack *);
+
 
 /**
  * @brief Function to get the top move of the stack

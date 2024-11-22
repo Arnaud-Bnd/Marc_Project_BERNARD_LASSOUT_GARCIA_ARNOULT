@@ -6,6 +6,8 @@
 #define UNTITLED1_MAP_H
 
 #define COST_UNDEF 65535
+
+
 /**
  * @brief Enum for the possible soils of the map
  */
@@ -18,14 +20,19 @@ typedef enum e_soil
     CREVASSE
 } t_soil;
 
+
 /**
  * @brief Array of costs for the soils
  */
 static const int _soil_cost[5] = {0, 1, 2, 4, 10000};
 
+
 /**
  * @brief Structure for the map
-
+ * @param soils : table of type box
+ * @param costs : table of box costs
+ * @param x_max : the number of columns
+ * @param y_max : the number of rows
  */
 typedef struct s_map
 {
@@ -35,12 +42,14 @@ typedef struct s_map
     int     y_max;
 } t_map;
 
+
 /**
  * @brief Function to initialise the map from a file
  * @param filename : the name of the file
  * @return the map
  */
 t_map createMapFromFile(char *);
+
 
 /**
  * @brief Function to create a standard training map (11x11 with only plains and base station in the middle)
@@ -49,10 +58,19 @@ t_map createMapFromFile(char *);
  */
  t_map createTrainingMap();
 
+
 /**
  * @brief display the map with characters
  * @param map : the map to display
  */
 void displayMap(t_map);
+
+
+/**
+ * @brief Function to create a new random .map file
+ * @param y : the number of rows
+ * @param x : the number of columns
+ */
+void new_map(int y, int x);
 
 #endif //UNTITLED1_MAP_H

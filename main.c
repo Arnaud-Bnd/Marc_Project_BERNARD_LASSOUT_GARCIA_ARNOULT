@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include "map.h"
-#include "moves.h"
+//#include "moves.h"
 #include "tree_functions.h"
 #include <limits.h>
 
 int main() {
+    clock_t start, end;
     t_map map = createMapFromFile("../maps/example1.map");
     printf("Map created with dimensions %d x %d\n", map.y_max, map.x_max);
     for (int i = 0; i < map.y_max; i++)
@@ -42,10 +43,13 @@ int main() {
 
     /// Création de l'arbre des chemins empreintés (3 choix/profondeur)
     int value = map.costs[robot.pos.x][robot.pos.y];
-    t_node *new_tree = createTrainingTree(value, 0, 9, robot, tabAction, map, NULL, -1);
+    printf("x_max = %d\n", map.x_max);
+    start = clock();
+    t_node *new_tree = createTree(value, 0, 9, 0, robot, tabAction, map, NULL, -1);
+    end = clock();
 
     /// Affichage de l'arbre des chemins empreintés
-    displayTree(new_tree, 0, 1);
+//    displayTree(new_tree, 0, 1);
 
     /// Test des résultats
     printf("\nPosition avant déplacement :\nx : %d\ny : %d\nori : %d\n", robot.pos.x, robot.pos.y, robot.ori);
@@ -61,7 +65,7 @@ int main() {
 
 
 //    t_node *mini_node = findMin(new_tree, 0, 9, INT_MAX);
-    t_node *maxnode = createRoot(INT_MAX, 0, 0);
+    t_node *maxnode = createRoot(INT_MAX, 0);
     t_node *mini_node = findMinNode(new_tree, 0, 9, maxnode);
 
     printf("Minimum : %d\n", mini_node->value);
@@ -69,7 +73,24 @@ int main() {
     for(int i = 0; i<=stack.size; i++){
         printf("%d\n", stack.moves[i]);
     }
+    for (int i = 4; i >= 0; i--) {
+        start = clock();
+        t_node *new_tree = createTree(value, 0, 9, i, robot, tabAction, map, NULL, -1);
+        end = clock();
+        printf("Temps construction de l'arbre avec %d choix : %f\n", 9 - i, ((double) (end - start)) / CLOCKS_PER_SEC);
+    }
 
-
+    new_map(16, 16);
+    t_map new_map = createMapFromFile("../maps/new_map.map");
+    for (int i = 0; i < new_map.y_max; i++)
+    {
+        for (int j = 0; j < new_map.x_max; j++)
+        {
+            printf("%-5d ", new_map.costs[i][j]);
+        }
+        printf("\n");
+    }
+    displayMap(new_map);
+//
     return 0;
 }

@@ -16,8 +16,11 @@ typedef enum e_orientation
     WEST
 } t_orientation;
 
+
 /**
  * @brief Structure for the position of the robot
+ * @param x : the position x (row) of the object
+ * @param y : the position y (column) of the object
  */
 typedef struct e_position
 {
@@ -25,14 +28,18 @@ typedef struct e_position
     int y;
 } t_position;
 
+
 /**
  * @brief Structure for the localisation of the robot
+ * @param pos : the position of the object
+ * @param ori : the orientation of the object
  */
 typedef struct s_localisation
 {
     t_position      pos;
     t_orientation   ori;
 } t_localisation;
+
 
 /**
  * @brief Function to initialise the localisation of the robot
@@ -43,6 +50,7 @@ typedef struct s_localisation
  */
 t_localisation loc_init(int, int, t_orientation);
 
+
 /**
  * @brief Function to check a valid position for the robot
  * @param loc : the localisation of the robot
@@ -52,12 +60,14 @@ t_localisation loc_init(int, int, t_orientation);
  */
 int isValidLocalisation(t_position, int, int);
 
+
 /**
  * @brief get the LEFT position of a position
  * @param pos : the position
  * @return the LEFT position
  */
 t_position LEFT(t_position);
+
 
 /**
  * @brief get the RIGHT position of a position
@@ -66,12 +76,14 @@ t_position LEFT(t_position);
  */
 t_position RIGHT(t_position);
 
+
 /**
  * @brief get the UP position of a position
  * @param pos : the position
  * @return the UP position
  */
 t_position UP(t_position);
+
 
 /**
  * @brief get the DOWN position of a position

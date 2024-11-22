@@ -19,7 +19,7 @@ t_queue createQueue(int size)
     queue.size = size;
     queue.first = 0;
     queue.last = 0;
-    queue.values = (t_position *)malloc(size * sizeof(t_position));
+    queue.pos = (t_position *)malloc(size * sizeof(t_position));
     return queue;
 }
 
@@ -27,7 +27,7 @@ void enqueue(t_queue *p_queue, t_position pos)
 {
     // the queue must not be full
     assert((p_queue->last - p_queue->first) < p_queue->size);
-    p_queue->values[(p_queue->last) % p_queue->size] = pos;
+    p_queue->pos[(p_queue->last) % p_queue->size] = pos;
     p_queue->last++;
     return;
 }
@@ -37,5 +37,5 @@ t_position dequeue(t_queue *p_queue)
     // the queue must not be empty
     assert(p_queue->last != p_queue->first);
     p_queue->first++;
-    return p_queue->values[(p_queue->first - 1) % p_queue->size];
+    return p_queue->pos[(p_queue->first - 1) % p_queue->size];
 }
