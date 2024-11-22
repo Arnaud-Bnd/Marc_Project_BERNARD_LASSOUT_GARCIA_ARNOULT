@@ -11,7 +11,8 @@
  * @param size : the size of the stack
  * @return the stack
  */
-t_stack createStack(int size){
+t_stack createStack(int size)
+{
     // the size of the stack must be positive
     assert(size > 0);
     t_stack stack;

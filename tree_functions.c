@@ -241,3 +241,4 @@ t_stack path_min_choices(t_node *min){
     }
     return pile;
 }
+

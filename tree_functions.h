@@ -96,7 +96,6 @@ int findMin(t_node *tree, int depth, int depthMax, int min);
  */
 t_node* findMinNode(t_node *tree, int depth, int depthMax, t_node *minNode);
 
-
 /**
  * @brief Function to make a stack of action to go to the minimum leaf
  * @param min : the pointer of the minimum leaf node

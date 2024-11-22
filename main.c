@@ -2,9 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include "map.h"
-//#include "moves.h"
+#include "moves.h"
 #include "tree_functions.h"
 #include <limits.h>
+#include "SDL.h"
+
+
+
 
 int main() {
     clock_t start, end;
@@ -31,7 +35,7 @@ int main() {
 
 
     /// Initialisation du robot en (0, 3) orienté vers l'Est
-    t_localisation robot = loc_init(3, 0, EAST);
+    t_localisation robot = loc_init(3, 4, EAST);
 
     /// Initialisation de l'enchaînement d'action
 //    t_move tabAction[5] = {F_10, F_20, F_30, T_LEFT, T_RIGHT };
@@ -49,7 +53,7 @@ int main() {
     end = clock();
 
     /// Affichage de l'arbre des chemins empreintés
-//    displayTree(new_tree, 0, 1);
+    displayTree(new_tree, 0, 1);
 
     /// Test des résultats
     printf("\nPosition avant déplacement :\nx : %d\ny : %d\nori : %d\n", robot.pos.x, robot.pos.y, robot.ori);
@@ -69,28 +73,70 @@ int main() {
     t_node *mini_node = findMinNode(new_tree, 0, 9, maxnode);
 
     printf("Minimum : %d\n", mini_node->value);
-    t_stack stack = path_min_choices(mini_node);
-    for(int i = 0; i<=stack.size; i++){
-        printf("%d\n", stack.moves[i]);
-    }
-    for (int i = 4; i >= 0; i--) {
-        start = clock();
-        t_node *new_tree = createTree(value, 0, 9, i, robot, tabAction, map, NULL, -1);
-        end = clock();
-        printf("Temps construction de l'arbre avec %d choix : %f\n", 9 - i, ((double) (end - start)) / CLOCKS_PER_SEC);
+    t_stack stack = path_min_choices( mini_node);
+
+
+    int width = map.x_max;
+    int height = map.y_max;
+
+    // Initialisation de SDL
+    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Window *window = SDL_CreateWindow("Carte Mars", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width * TILE_SIZE, height * TILE_SIZE, SDL_WINDOW_SHOWN);
+    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+    // Charger les images pour chaque type de terrain
+    textures[BASE_STATION] = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("../Skins/Base_1.bmp"));
+    textures[PLAIN] = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("../Skins/Plain.bmp"));
+    textures[ERG] = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("../Skins/Erg.bmp"));
+    textures[REG] = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("../Skins/Reg.bmp"));
+    textures[CREVASSE] = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("../Skins/Crevasse.bmp"));
+
+    // Charger l'image du robot
+    robotTexture = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("../Skins/Robot.bmp"));
+
+    int running = 1;
+
+    SDL_Event event;
+
+
+    while (running && stack.nbElts!=0) {
+        // Gestion des événements
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) running = 0;
+        }
+
+        // Effacer l'écran
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // Fond blanc
+        SDL_RenderClear(renderer);
+
+        // Dessiner la carte
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                drawTile(renderer, x, y, map.soils[y][x]);
+            }
+        }
+        // Déplacer le robot
+        updateLocalisation(&robot, pop(&stack));
+
+        // Dessiner le robot par-dessus la carte
+        drawRobot(renderer, robot);
+
+        // Afficher la scène
+        SDL_RenderPresent(renderer);
+
+        // Attendre un peu pour voir le mouvement
+        SDL_Delay(1000); // 2000 ms
+
     }
 
-    new_map(16, 16);
-    t_map new_map = createMapFromFile("../maps/new_map.map");
-    for (int i = 0; i < new_map.y_max; i++)
-    {
-        for (int j = 0; j < new_map.x_max; j++)
-        {
-            printf("%-5d ", new_map.costs[i][j]);
-        }
-        printf("\n");
+    // Libérer les textures
+    for (int i = 0; i < 5; i++) {
+        SDL_DestroyTexture(textures[i]);
     }
-    displayMap(new_map);
-//
+    SDL_DestroyTexture(robotTexture);
+
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
     return 0;
 }
