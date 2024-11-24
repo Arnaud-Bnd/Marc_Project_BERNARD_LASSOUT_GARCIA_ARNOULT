@@ -11,7 +11,7 @@
 </div>
 
 ## Prérequis
-Pour pouvoir utiliser l'interface graphique, 
+Afin de pour pouvoir utiliser l'interface graphique, 
 <br>
 1. Dans le fichier CMake, rajouter en dernière ligne:<br><code>target_link_librairies(Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT $ {SDL2_LIBRAIRIES} $ {SDL2_IMAGE_LIBRAIRIES})</code>
 2. Puis dans votre invite de commande, rentrer les commandes suivantes:<br><code>brew install sdl2</code><br><code>brew install sdl2_image</code>
