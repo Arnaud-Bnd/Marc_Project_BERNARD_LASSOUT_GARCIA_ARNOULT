@@ -65,7 +65,7 @@ t_node *createTree(int value, int depth, int nbSons, int nbMoveEnd, t_localisati
     }
 
     /* Vérification de la profondeur, doit toujours être supérieur à 0 */
-    if (nbSons > nbMoveEnd) {
+    if (nbSons > 0) {
         /* Parcours de toutes les actions possibles */
         for (int i = 0; i < nbSons; i++) {
             /* Effectuer l'action sélectionnée */
@@ -174,15 +174,38 @@ t_move *tirage_aleatoire_adaptatif() {
         }
 
         // Affichage de l'action sélectionnée
-        /*if (action != -1) {
+        if (action != -1) {
             tabAction[k++] = action_names[action];
-            printf("Tirage %d: %d\n", t + 1, action_names[action]);
+            printf("Tirage %d: ", t + 1);
+            switch (action_names[action]) {
+                case 0:
+                    printf("Action: F_10\n");
+                    break;
+                case 1:
+                    printf("Action: F_20\n");
+                    break;
+                case 2:
+                    printf("Action: F_30\n");
+                    break;
+                case 3:
+                    printf("Action: B_10\n");
+                    break;
+                case 4:
+                    printf("Action: T_LEFT\n");
+                    break;
+                case 5:
+                    printf("Action: T_RIGHT\n");
+                    break;
+                case 6:
+                    printf("Action: U_TURN\n");
+                    break;
+            }
 
             // Réduction de la probabilité de l'action choisie de 0.01, si elle est > 0.01
-            if (probabilites[action] > 0.01) {
+            if (probabilites[action] >= 0.01) {
                 probabilites[action] -= 0.01;
             }
-        }*/
+        }
     }
 
     return tabAction;
