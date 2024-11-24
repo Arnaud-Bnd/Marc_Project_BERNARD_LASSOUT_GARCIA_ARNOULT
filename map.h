@@ -73,4 +73,12 @@ void displayMap(t_map);
  */
 void new_map(int y, int x);
 
+
+/**
+ * @brief Function to display the costs of the map
+ * @param map : the map
+ */
+void displayCost(t_map map);
+
+
 #endif //UNTITLED1_MAP_H
