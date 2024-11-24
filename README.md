@@ -28,7 +28,17 @@ Pour réaliser ce logiciel de déplacement qui doit secourir MARC, nous devons r
     - Un exemple complet de guidage de MARC depuis sa position d'origine vers la station de base
   Nous avons aussi élaborer un algorithme nosu permettant d'inventer nos propres cartes géographiques de MARC afin de mettre notre programme à l'épreuve.
 
-- L'étape 3 nous a permis d'améliorer l'interface graphique de notre logiciel afin de le rendre plus compréhensible. 
+- L'étape 3 nous a permis d'améliorer l'interface graphique de notre logiciel afin de le rendre plus compréhensible.
+
+## Fonctionnalités
+Notre logiciel comporte plusieurs fonctionnalités permettant de paramètrer la mission de guidage ou de modifier les conditions de l'environnement. Les fonctionnalités misent à la disposition de l'utilisateur sont:
+1. La création d'une carte pour ramener le rover MARC
+2. L'affichage de la carte pour voir la localisation de MARC
+3. L'affichage des coûts
+4. Le tirage des actions ainsi que leur affichage
+5. La possibilité de choisir l'emplacement du rover MARC
+6. La fin de la mission
+7. Le choix de la langue (choix possible entre le français et l'anglais)
 
 ## Structure
 - Le fichier loc.h contient les prototypes et les structures permettant de déplacer notre rover MARC
