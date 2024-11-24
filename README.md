@@ -10,7 +10,11 @@
 </p>
 </div>
 
-## Préambule
+## Prérequis
+Pour pouvoir utiliser l'interface graphique, 
+<br>
+1. Dans le fichier CMake, rajouter en dernière ligne:<br><code>target_link_librairies(Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT $ {SDL2_LIBRAIRIES} $ {SDL2_IMAGE_LIBRAIRIES})</code><br>Cette commande permettra de lier SDL2 à SDL2_image à l'exécutable.
+2. 
 
 ## Déroulement du Projet
 Pour réaliser ce logiciel de déplacement qui doit secourir MARC, nous devons réaliser 3 étapes.
