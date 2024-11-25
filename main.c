@@ -320,7 +320,7 @@ int main() {
                                 break;
                         }
 
-                        do {
+//                        do {
                             t_node *maxnode = createRoot(INT_MAX, 0);
                             start = clock();
                             t_node *mini_node = findMinNode(new_tree, 0, 9, maxnode);
@@ -428,7 +428,7 @@ int main() {
                             createTree(mapInterface.costs[robot.pos.x][robot.pos.y], 0, 9, 0, robot, tabAction,
                                        mapInterface, NULL, -1);
                             tabAction = tirage_aleatoire_adaptatif();
-                        } while (mapInterface.costs[robot.pos.x][robot.pos.y] != 0);
+//                        } while (mapInterface.costs[robot.pos.x][robot.pos.y] != 0);
                         break;
 
                     case 9:
