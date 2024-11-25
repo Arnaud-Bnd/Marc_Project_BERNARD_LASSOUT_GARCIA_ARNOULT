@@ -118,6 +118,7 @@ int main() {
                     case 4:
                         printf("Vous avez choisi de faire un tirage des actions puis les afficher\n");
                         t_move *tabAction = tirage_aleatoire_adaptatif();
+                        displayMoveTab(tabAction);
                         isTabAction = 1;
                         break;
 
@@ -257,8 +258,7 @@ int main() {
                                     for (int i = 4; i >= 0; i--) {
                                         start = clock();
                                         new_tree = createTree(map.costs[robot.pos.x][robot.pos.y], 0, 9, i, robot,
-                                                              tabAction, map,
-                                                              NULL, -1);
+                                                              tabAction, map, NULL, -1);
                                         end = clock();
                                         printf("Temps construction de l'arbre avec %d choix : %f\n", 9 - i,
                                                ((double) (end - start)) / CLOCKS_PER_SEC);
@@ -271,9 +271,8 @@ int main() {
                                     }
                                     for (int i = 4; i >= 0; i--) {
                                         start = clock();
-                                        new_tree = createTree(map.costs[robot.pos.x][robot.pos.y], 0, 9, i, robot,
-                                                              tabAction, map,
-                                                              NULL, -1);
+                                        new_tree = createTree(newMap.costs[robot.pos.x][robot.pos.y], 0, 9, i, robot,
+                                                              tabAction, newMap, NULL, -1);
                                         end = clock();
                                         printf("Temps construction de l'arbre avec %d choix : %f\n", 9 - i,
                                                ((double) (end - start)) / CLOCKS_PER_SEC);
@@ -288,8 +287,7 @@ int main() {
                             for (int i = 4; i >= 0; i--) {
                                 start = clock();
                                 new_tree = createTree(map.costs[robot.pos.x][robot.pos.y], 0, 9, i, robot, tabAction,
-                                                      map,
-                                                      NULL, -1);
+                                                      map,NULL, -1);
                                 end = clock();
                                 printf("Temps construction de l'arbre avec %d choix : %f\n", 9 - i,
                                        ((double) (end - start)) / CLOCKS_PER_SEC);
@@ -324,9 +322,15 @@ int main() {
 
                         do {
                             t_node *maxnode = createRoot(INT_MAX, 0);
+                            start = clock();
                             t_node *mini_node = findMinNode(new_tree, 0, 9, maxnode);
+                            end = clock();
+                            printf("Temps de recherche de la feuille minimale : %f\n", ((double) (end - start)) / CLOCKS_PER_SEC);
 
+                            start = clock();
                             t_stack stack = path_min_choices(mini_node);
+                            end = clock();
+                            printf("Temps de recherche du chemin optimal : %f\n", ((double) (end - start)) / CLOCKS_PER_SEC);
                             if (mapInterface.x_max <= 15 && mapInterface.y_max <= 15) {
                                 int width = mapInterface.x_max;
                                 int height = mapInterface.y_max;
@@ -401,8 +405,7 @@ int main() {
                                 do {
                                     updateLocalisation(&robot, pop(&stack));
                                 } while (stack.nbElts != 0);
-                                printf("Le robot est à la position (%d, %d) et est orienté vers le ", robot.pos.x,
-                                       robot.pos.y);
+                                printf("Le robot est à la position (%d, %d) et est orienté vers le ", robot.pos.x + 1, robot.pos.y + 1);
                                 switch (robot.ori) {
                                     case NORTH:
                                         printf("Nord\n");
@@ -424,6 +427,7 @@ int main() {
                             }
                             createTree(mapInterface.costs[robot.pos.x][robot.pos.y], 0, 9, 0, robot, tabAction,
                                        mapInterface, NULL, -1);
+                            tabAction = tirage_aleatoire_adaptatif();
                         } while (mapInterface.costs[robot.pos.x][robot.pos.y] != 0);
                         break;
 
@@ -659,8 +663,7 @@ int main() {
                                     for (int i = 4; i >= 0; i--) {
                                         start = clock();
                                         new_tree = createTree(map.costs[robot.pos.x][robot.pos.y], 0, 9, i, robot,
-                                                              tabAction, map,
-                                                              NULL, -1);
+                                                              tabAction, map, NULL, -1);
                                         end = clock();
                                         printf("Tree construction time with %d choices : %f\n", 9 - i,
                                                ((double) (end - start)) / CLOCKS_PER_SEC);
@@ -673,9 +676,8 @@ int main() {
                                     }
                                     for (int i = 4; i >= 0; i--) {
                                         start = clock();
-                                        new_tree = createTree(map.costs[robot.pos.x][robot.pos.y], 0, 9, i, robot,
-                                                              tabAction, map,
-                                                              NULL, -1);
+                                        new_tree = createTree(newMap.costs[robot.pos.x][robot.pos.y], 0, 9, i, robot,
+                                                              tabAction, newMap, NULL, -1);
                                         end = clock();
                                         printf("Tree construction time with %d choices : %f\n", 9 - i,
                                                ((double) (end - start)) / CLOCKS_PER_SEC);
@@ -690,8 +692,7 @@ int main() {
                             for (int i = 4; i >= 0; i--) {
                                 start = clock();
                                 new_tree = createTree(map.costs[robot.pos.x][robot.pos.y], 0, 9, i, robot, tabAction,
-                                                      map,
-                                                      NULL, -1);
+                                                      map, NULL, -1);
                                 end = clock();
                                 printf("Tree construction time with %d choices : %f\n", 9 - i,
                                        ((double) (end - start)) / CLOCKS_PER_SEC);
@@ -726,9 +727,15 @@ int main() {
 
                         do {
                             t_node *maxnode = createRoot(INT_MAX, 0);
+                            start = clock();
                             t_node *mini_node = findMinNode(new_tree, 0, 9, maxnode);
+                            end = clock();
+                            printf("Minimum sheet search time : %f\n", ((double) (end - start)) / CLOCKS_PER_SEC);
 
+                            start = clock();
                             t_stack stack = path_min_choices(mini_node);
+                            end = clock();
+                            printf("Optimum path search time : %f\n", ((double) (end - start)) / CLOCKS_PER_SEC);
                             if (mapInterface.x_max <= 15 && mapInterface.y_max <= 15) {
                                 int width = mapInterface.x_max;
                                 int height = mapInterface.y_max;

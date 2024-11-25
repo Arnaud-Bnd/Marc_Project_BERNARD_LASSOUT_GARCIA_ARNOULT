@@ -111,4 +111,10 @@ t_stack path_min_choices(t_node *min);
 t_move *tirage_aleatoire_adaptatif();
 
 
+/**
+ * @brief Function to display the tab of actions
+ * @param tabAction : the tab of actions
+ */
+void displayMoveTab(t_move *tabAction);
+
 #endif //MARC_PROJECT_BERNARD_LASSOUT_GARCIA_ARNOULT_TREE_FUNCTIONS_H
