@@ -13,7 +13,8 @@
 ## Prérequis
 Afin de pour pouvoir utiliser l'interface graphique, 
 <br>
-1. Dans le fichier CMake, rajouter en dernière ligne:<br><code>target_link_librairies(Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT $ {SDL2_LIBRAIRIES} $ {SDL2_IMAGE_LIBRAIRIES})</code>
+1. Dans le fichier CMake, rajouter en dernière ligne:<br><code>target_link_librairies(Marc_Project_BERNARD_LASSOUT_GARCIA_ARNOULT $ {SDL2_LIBRAIRIES} $ {SDL2_IMAGE_LIBRAIRIES})</code><br><code>find_package(SDL2 REQUIRED)<br>
+find_package(SDL2_image REQUIRED)</code>
 2. Puis dans votre invite de commande, rentrer les commandes suivantes:<br><code>brew install sdl2</code><br><code>brew install sdl2_image</code>
 <br>Ces commandes permettront de lier SDL2 à SDL2_image à l'exécutable.
 
